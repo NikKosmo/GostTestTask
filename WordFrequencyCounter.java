@@ -8,8 +8,8 @@ public class WordFrequencyCounter {
 
     public static void printWordsWithFrequency(String fileName) {
         Comparator<Map.Entry<String, Integer>> comparator = Comparator.comparingInt(Map.Entry::getValue);
-        List<Map.Entry<String, Integer>> words = new ArrayList<>(mapWithFrequency(fileName).entrySet());
-        words.stream().sorted(comparator.reversed()).forEach(System.out::println);
+        List<Map.Entry<String, Integer>> wordsWithFrequency = new ArrayList<>(mapWithFrequency(fileName).entrySet());
+        wordsWithFrequency.stream().sorted(comparator.reversed()).forEach(System.out::println);
     }
 
     private static Map<String, Integer> mapWithFrequency(String fileName) {
